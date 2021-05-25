@@ -1,6 +1,8 @@
 import React from "react";
 import { useRef } from "react";
 import { Form, Button } from "react-bootstrap";
+import '../css/donate.css';
+
 function Donate(props) {
   const name = useRef();
   const category = useRef();
@@ -55,7 +57,7 @@ function Donate(props) {
             </Form.Text>
           </Form.Group>
 
-          <Form.Group className="form-group file-area">
+          <Form.Group className="form-group file__area">
             <Form.Control
               type="file"
               name="images"
@@ -63,7 +65,7 @@ function Donate(props) {
               required
               multiple="multiple"
             />
-            <div className="file-dummy">
+            <div className="file__dummy">
               <div className="success">
                 Great, your files are selected. Keep on.
               </div>

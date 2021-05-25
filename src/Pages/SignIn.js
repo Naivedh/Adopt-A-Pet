@@ -1,8 +1,11 @@
 import React, { useRef } from "react";
-import { useHistory } from "react-router";
 import * as actions from "../store/actions/index";
-import { Alert } from "react-bootstrap";
 import { connect } from "react-redux";
+
+import { useHistory } from "react-router";
+import { Alert } from "react-bootstrap";
+
+import '../css/login.css';
 
 function SignIn({ signIn, loading, error }) {
   const history = useHistory();
@@ -22,6 +25,7 @@ function SignIn({ signIn, loading, error }) {
   };
   return (
     <div>
+       {/* {console.log(error)} */}
       {loading ? (
         <div className="loading">Loading ...</div>
       ) : (

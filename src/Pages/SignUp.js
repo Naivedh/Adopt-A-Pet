@@ -1,9 +1,11 @@
 import React, { useRef } from "react";
-import { useHistory } from "react-router";
 import * as actions from "../store/actions/index";
-import { Alert } from "react-bootstrap";
 import { connect } from "react-redux";
 
+import { useHistory } from "react-router";
+import { Alert } from "react-bootstrap";
+
+import "../css/login.css";
 
 function SignUp({ signUp, loading, error }) {
   const history = useHistory();
@@ -11,15 +13,14 @@ function SignUp({ signUp, loading, error }) {
   const emailRef = useRef();
   const passRef = useRef();
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
       email: emailRef.current.value,
       password: passRef.current.value,
     };
     await signUp(data);
-    if(error!=null)
-      history.push("/");
+    if (error != null) history.push("/");
   };
 
   return (
@@ -30,7 +31,11 @@ function SignUp({ signUp, loading, error }) {
         <div className="container signup__container">
           <div className="container__child signup__form">
             <h2>Sign Up</h2>
-            {error && <Alert variant="danger" style={{fontSize: "14px"}}>{error}</Alert>}
+            {error && (
+              <Alert variant="danger" style={{ fontSize: "14px" }}>
+                {error}
+              </Alert>
+            )}
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="email">Email</label>
@@ -81,9 +86,9 @@ function SignUp({ signUp, loading, error }) {
   );
 }
 
-const mapStateToProps = ({auth}) => ({
+const mapStateToProps = ({ auth }) => ({
   loading: auth.loading,
-  error: auth.error
+  error: auth.error,
 });
 
 const mapDispatchToProps = {

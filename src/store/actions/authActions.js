@@ -32,7 +32,7 @@ export const SignIn =
     dispatch({ type: "AUTH_START" });
 
     try {
-      const res = firebase
+      await firebase
         .auth()
         .signInWithEmailAndPassword(data.email, data.password);
 
