@@ -1,38 +1,186 @@
-.App {
+:root {
+  --light: #fff;
+  /* --black: #000; */
+  --darkblue: #14213d;
+  /* --myyellow: #FCA311; */
+  --grey: #e5e5e5;
+}
+* {
+  margin: 0;
+}
+
+/* nav */
+.navbar {
+  background-color: var(--darkblue);
+  font-size: 18px;
+  font-weight: 600;
+}
+.navbar-brand,
+.nav-link {
+  color: var(--light) !important;
+  margin: 0px 10px;
+}
+.nav-link:hover {
+  color: var(--grey) !important;
+}
+.navbar-light .navbar-toggler-icon {
+  background-image: url("./assets/images/images.png")!important;
+}
+
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  font-weight: 700;
+  font-size: larger;
+}
+/* home */
+.home {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 500px;
+}
+.home__button {
+  margin: -150px 0px;
+  background-color: var(--darkblue) !important;
+  border-color: var(--darkblue) !important;
+  padding: 15px 25px !important;
+  transition: 1s ease-in-out;
+}
+.home__button:hover {
+  transform: scale(0.9);
+}
+
+/* sign */
+
+.signup__container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 500px;
+}
+.container__child {
+  width: 50%;
+  height: 100%;
+}
+.container__child h2 {
+  margin-top: -1rem;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.signup__form {
+  padding: 2.5rem;
+  background: var(--darkblue);
+  color: var(--grey);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+label {
+  font-size: 1.1rem;
+  text-transform: uppercase;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-control {
+  background-color: #fff;
+}
+.list-inline {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.btn--form {
+  margin-top: 1rem;
+  margin-bottom: -0.5rem;
+  padding: 0.5rem 2.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: var(--grey) !important;
+  border-radius: 35px;
+}
+.signup__link {
+  margin-left: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--grey);
+  transition: 1s ease-in-out;
+}
+.signup__link:hover {
+  text-decoration: underline;
+}
+.new__link {
+  margin-top: 1rem;
+}
+.new__link a:hover {
+  color: var(--grey) !important;
+}
+@media (max-width: 780px) {
+  .container__child {
+    width: 90%;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* donate */
+.form-control {
+  display: inline !important;
+}
+.donate {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.donate__form {
+  text-align: left;
+}
+.file-area {
+  width: 100%;
+  position: relative;
+}
+.file-area input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.file-area .file-dummy {
+  width: 100%;
+  padding: 30px;
+  background: rgba(20, 40, 212, 0.2);
+  border: 2px rgba(20, 40, 212, 0.2);
+  text-align: center;
+}
+.file-area .file-dummy .success {
+  display: none;
+}
+.file-area:hover .file-dummy {
+  background: rgba(255, 255, 255, 0.1);
+}
+.file-area input[type="file"]:focus + .file-dummy {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline: -webkit-focus-ring-color auto 5px;
+}
+.file-area input[type="file"]:valid + .file-dummy {
+  border-color: rgba(31, 160, 31, 0.3);
+  background-color: rgba(31, 160, 31, 0.3);
+}
+.file-area input[type="file"]:valid + .file-dummy .success {
+  display: inline-block;
+}
+.file-area input[type="file"]:valid + .file-dummy .default {
+  display: none;
+}
+.submit__button {
+  margin: -150px 0px;
+  background-color: var(--darkblue) !important;
+  border-color: var(--darkblue) !important;
+  transition: 1s ease-in-out;
+}
+.submit__button:hover {
+  transform: scale(0.9);
 }
