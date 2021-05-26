@@ -1,6 +1,10 @@
 .form-control {
   display: inline !important;
 }
+.form-control:focus {
+  border-color: rgba(20, 20, 20, 0.2) !important;
+  box-shadow: none !important;
+}
 .donate {
   display: flex;
   justify-content: space-evenly;
@@ -30,12 +34,13 @@
   background: rgba(20, 40, 212, 0.2);
   border: 2px rgba(20, 40, 212, 0.2);
   text-align: center;
+  transition: 0.2s ease-in-out;
 }
 .file__area .file__dummy .success {
   display: none;
 }
 .file__area:hover .file__dummy {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(20, 40, 212, 0.3);
 }
 .file__area input[type="file"]:focus + .file__dummy {
   outline: 2px solid rgba(255, 255, 255, 0.5);
@@ -51,12 +56,19 @@
 .file__area input[type="file"]:valid + .file__dummy .default {
   display: none;
 }
+
 .submit__button {
+  font-weight: 550 !important;
   margin: -150px 0px;
   background-color: var(--darkblue) !important;
   border-color: var(--darkblue) !important;
-  transition: 1s ease-in-out;
 }
 .submit__button:hover {
-  transform: scale(0.9);
+  background-color: var(--myyellow) !important;
+  border-color: var(--myyellow) !important;
+  color: var(--black) !important;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus{
+  box-shadow: none!important;
 }
