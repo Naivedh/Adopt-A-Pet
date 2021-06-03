@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { useHistory } from "react-router";
 import { Alert } from "react-bootstrap";
 
-import '../css/login.css';
+import "../css/login.css";
 
 function SignIn({ signIn, loading, error }) {
   const history = useHistory();
@@ -13,19 +13,18 @@ function SignIn({ signIn, loading, error }) {
   const emailRef = useRef();
   const passRef = useRef();
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
       email: emailRef.current.value,
       password: passRef.current.value,
     };
     await signIn(data);
-    if (error != null) 
-      history.push("/");
+    if (error == null) history.push("/");
   };
   return (
     <div>
-       {/* {console.log(error)} */}
+      {/* {console.log(error)} */}
       {loading ? (
         <div className="loading">Loading ...</div>
       ) : (

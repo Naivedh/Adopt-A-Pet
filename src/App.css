@@ -2,7 +2,7 @@
   --light: #fff;
   --black: #000;
   --darkblue: #14213d;
-  --myyellow: #FCA311;
+  --myyellow: #FF8C00;
   --grey: #e5e5e5;
 }
 * {
@@ -24,7 +24,7 @@
   color: var(--grey) !important;
 }
 .navbar-light .navbar-toggler-icon {
-  background-image: url("./assets/images/images.png")!important;
+  background-image: url("./assets/images/images.png") !important;
 }
 
 .loading {
@@ -41,9 +41,16 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 500px;
+  height: 100vh;
+  background-image: url("https://www.wallpapertip.com/wmimgs/156-1563935_puppy-dog-wallpaper-golden-retriever-facts.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.1);
+  background-blend-mode: lighten;
 }
 .home__button {
+  z-index: 99;
+  opacity: 1;
   margin: -150px 0px;
   background-color: var(--darkblue) !important;
   border-color: var(--darkblue) !important;
@@ -54,3 +61,8 @@
   transform: scale(0.9);
 }
 
+@media (max-width: 780px) {
+  .home {
+    background-image: url("https://fsa.zobj.net/crop.php?r=Hw35t-eWdLYQKIlPfRKY0flJsL01XqYymEVrPRIMJxG35sJt_fmZJo5cORay3Bu-f9PxkcaGOjqd3ChG4QCnK1QojbU5V6_E9LudGltcRF6FFHcBWxP2zf2ZgdNmYQ8COy2EpauA0yvctrXC");
+  }
+}

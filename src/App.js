@@ -13,13 +13,15 @@ import SignUp from "./Pages/SignUp";
 import ForgotPassword from "./Pages/ForgotPassword";
 import Donate from "./Pages/Donate";
 import Adopt from "./Pages/Adopt";
+import Logout from "./Pages/Logout";
+import AdoptPage from "./Pages/AdoptPage";
 
 import Navigation from "./Components/Navigation";
 
 //css
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Logout from "./Pages/Logout";
+
 
 function App({ loggedIn }) {
   let routes;
@@ -29,6 +31,7 @@ function App({ loggedIn }) {
         <Route path="/" exact component={Home} />
         <Route path="/donate" exact component={Donate} />
         <Route path="/adopt" exact component={Adopt} />
+        <Route path="/adopt/:id" exact component={AdoptPage} />
         <Route path="/logout" component={Logout} />
         <Redirect to="/" />
       </Switch>

@@ -20,7 +20,7 @@ function SignUp({ signUp, loading, error }) {
       password: passRef.current.value,
     };
     await signUp(data);
-    if (error != null) history.push("/");
+    if (error == null) history.push("/");
   };
 
   return (

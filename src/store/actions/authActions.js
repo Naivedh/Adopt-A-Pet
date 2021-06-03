@@ -14,6 +14,7 @@ export const SignUp =
 
       await firestore.collection("users").doc(result.user.uid).set({
         email: data.email,
+        pets: [],
       });
       dispatch({ type: "AUTH_SUCCESS" });
     } catch (err) {
