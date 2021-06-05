@@ -2,9 +2,10 @@ const initialState = {
   error: null,
   loading: false,
   data: null,
+  userpets: null,
 };
 
-const actionReducer = (state = initialState, action) => {
+const adoptReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADOPT_START":
       return {
@@ -22,7 +23,8 @@ const actionReducer = (state = initialState, action) => {
       return {
         ...state,
         error: null,
-        data: action.payload,
+        data: action.payload.data,
+        userpets: action.payload.userpets,
       };
     case "ADOPT_FAIL":
       return {
@@ -34,4 +36,4 @@ const actionReducer = (state = initialState, action) => {
   }
 };
 
-export default actionReducer;
+export default adoptReducer;

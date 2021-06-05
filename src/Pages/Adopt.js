@@ -31,7 +31,7 @@ function Adopt({ adopt, data, loading, error }) {
       </div>
     );
   };
-
+  
   return (
     <div className="container-fluid">
       {loading ? (

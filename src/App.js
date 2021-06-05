@@ -21,6 +21,7 @@ import Navigation from "./Components/Navigation";
 //css
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import UserPets from "./Pages/UserPets";
 
 
 function App({ loggedIn }) {
@@ -32,6 +33,7 @@ function App({ loggedIn }) {
         <Route path="/donate" exact component={Donate} />
         <Route path="/adopt" exact component={Adopt} />
         <Route path="/adopt/:id" exact component={AdoptPage} />
+        <Route path="/userpets" component={UserPets} />
         <Route path="/logout" component={Logout} />
         <Redirect to="/" />
       </Switch>

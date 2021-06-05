@@ -16,7 +16,10 @@ function Navigation({ loggedIn }) {
           {!loggedIn ? (
             <Nav.Link href="/signup">Sign Up</Nav.Link>
           ) : (
+            <>
+            <Nav.Link href="/userpets">Pets</Nav.Link>
             <Nav.Link href="/logout">Logout</Nav.Link>
+            </>
           )}
         </Nav>
       </Navbar.Collapse>

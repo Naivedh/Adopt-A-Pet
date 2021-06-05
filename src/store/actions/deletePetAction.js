@@ -1,45 +1,44 @@
-export const adopt =
-  () =>
+export const deletePet =
+  (petname) =>
   async (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();
     const firestore = getFirestore();
 
     const uid = await firebase.auth().currentUser.uid;
-    let data = [];
-    let userpets = [];
     let email = "";
-
-    dispatch({ type: "ADOPT_START" });
+    let new_pets = [];
+    dispatch({ type: "DELETE_START" });
     try {
-      //get email
       await firestore
         .collection("users")
         .doc(uid)
         .get()
         .then((snapshot) => (email = snapshot.data().email));
+
       //fetch data
       await firestore
         .collection("users")
         .get()
         .then((snapshot) => {
           snapshot.forEach((doc) => {
-            if (doc.data().email !== email) {
+            if (doc.data().email === email) {
               doc.data().pets.forEach((pet) => {
-                data.push(pet);
-              });
-            }
-            else{
-              doc.data().pets.forEach((pet) => {
-                userpets.push(pet);
+                if (petname !== pet.name) {
+                  new_pets.push(pet);
+                }
               });
             }
           });
         });
+      // delete and push
+      await firestore
+        .collection("users")
+        .doc(uid)
+        .set({ pets: new_pets }, { merge: true });
 
-      dispatch({ type: "ADOPT_SUCCESS", payload: { data, userpets } });
+      dispatch({ type: "DELETE_SUCCESS" });
     } catch (err) {
-      dispatch({ type: "ADOPT_FAIL", payload: err.message });
-      console.log(err.message);
+      dispatch({ type: "DELETE_FAIL", payload: err.message });
     }
-    dispatch({ type: "ADOPT_END" });
+    dispatch({ type: "DELETE_END" });
   };

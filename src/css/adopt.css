@@ -10,6 +10,7 @@
 .card-img-top {
   border-top-left-radius: 2% !important;
   border-top-right-radius: 2% !important;
+  height: 200px;
 }
 .adopt__container a {
   text-decoration: none;
@@ -88,5 +89,8 @@
   .about {
     margin: auto !important;
     text-align: center;
+  }
+  .card-img-top{
+    height: auto;
   }
 }
